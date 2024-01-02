@@ -8,8 +8,16 @@ LONG_BREAK_MIN = 20
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
-
+def start_count():
+    count_down(5)
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+
+
+def count_down(count):
+    canvas.itemconfig(timer_text, text=count)
+    if count > 0:
+        window.after(1000, count_down, count-1)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -19,13 +27,13 @@ window.config(padx=100, pady=100,background="purple")
 canvas = Canvas(width=224, height=224, highlightthickness=0)
 pomo_img = PhotoImage(file="pomodoro.png")
 canvas.create_image(112,112,image=pomo_img)
-canvas.create_text(112, 112, text="00:00", fill="purple", font=(FONT_NAME, 28, "bold"))
+timer_text = canvas.create_text(112, 112, text="00:00", fill="purple", font=(FONT_NAME, 28, "bold"))
 canvas.grid(row=1, column=1)
 
 timer = Label(text="Timer", font=("calibri", 22, "bold"), background="purple",fg="yellow")
 timer.grid(row=0, column=1)
 
-start = Button(text="Start")
+start = Button(text="Start", command=start_count)
 start.grid(row=2, column=0)
 
 reset = Button(text="Reset")
