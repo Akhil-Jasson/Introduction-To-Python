@@ -1,0 +1,9 @@
+chess.com|akhilinian@gmail.com|akhi
+checkers.com|akhilinian@gmail.com|akhi
+test.com|akhilinian@gmail.com|test
+test2|akhilinian@gmail.com|pass2
+test3|akhilinian@gmail.com|test3
+test4|akhilinian@gmail.com|test4
+test5|akhilinian@gmail.com|test5
+test6|akhilinian@gmail.com|test6
+test7|akhilinian@gmail.com|test7
